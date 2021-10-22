@@ -1,1 +1,20 @@
-<p>gallery works!</p>
+<div>
+  <button class="btn btn-primary my-3" (click)="goBack()">
+    Back
+  </button>
+</div>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let data of data$ | async">
+      <div class="col-5 my-3"><img class="img-fluid" src="{{ data }}" alt="Photo" /></div>
+    </ng-container>
+  </div>
+</div>
+
+<div>
+  <button class="btn btn-primary my-3" (click)="goBack()">
+    Back
+  </button>
+</div>
+

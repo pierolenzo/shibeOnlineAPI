@@ -1,0 +1,41 @@
+<form [formGroup]="animalForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="typeAnimal">Select type of Animal</label>
+    <select
+      name="typeAnimal"
+      class="form-control form-select"
+      id="typeAnimal"
+      formControlName="typeAnimal"
+    >
+      <option value="cats">Cats</option>
+      <option value="birds">Birds</option>
+      <option value="shibes">Shibes</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="numberPhoto">Number Photo to get</label>
+    <input
+      name="numberPhoto"
+      type="number"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': animalForm.invalid }"
+      id="numberPhoto"
+      placeholder="1"
+      formControlName="numberPhoto"
+    />
+    <p class="text-danger p-0 m-0" *ngIf="animalForm.invalid">
+      <small>Inserisci un valore positivo</small>
+    </p>
+  </div>
+
+  <div class="">
+    <button
+      class="btn btn-primary my-1"
+      type="submit"
+      [disabled]="!animalForm.valid"
+    >
+      GET
+    </button>
+  </div>
+</form>
