@@ -12,7 +12,7 @@ export class DataRetriveService {
   constructor(private httpClient: HttpClient) {
     this.dataUrl = '/api';
 
-   }
+  }
 
   /**
    * getData Preleva i dati da shibe.online
